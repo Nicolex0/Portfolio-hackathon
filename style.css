@@ -141,3 +141,20 @@ button:hover {
     gap: 2rem;
     justify-content: center;
 }
+
+ /* Contact Section */
+ #contact p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+#contact a {
+    color: #f4a5b7; /* Soft pink contact links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #f8bbd0; /* Lighter pink on hover */
+}
+
