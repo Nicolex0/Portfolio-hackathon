@@ -133,3 +133,11 @@ button:hover {
 #resume a:hover {
     background-color: #f8bbd0; /* Lighter pink on hover */
 }
+
+ /* Card Layout for Technical Skills and Projects */
+ .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
