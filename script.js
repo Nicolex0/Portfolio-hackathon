@@ -59,3 +59,15 @@ toggleIcon.addEventListener('click', () => {
         toggleIcon.classList.add('fa-sun');
     }
 });
+
+// Contact Form Submission
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    console.log('Form Submitted:', { name, email, message });
+    alert('Thank you for your message! (This is a demo - no real submission yet)');
+    e.target.reset();
+});
