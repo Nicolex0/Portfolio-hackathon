@@ -31,3 +31,17 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Project Card Expansion
+document.querySelectorAll('.toggle-details').forEach(button => {
+    button.addEventListener('click', () => {
+        const moreDetails = button.previousElementSibling;
+        if (moreDetails.style.display === 'none' || moreDetails.style.display === '') {
+            moreDetails.style.display = 'block';
+            button.textContent = 'Read Less';
+        } else {
+            moreDetails.style.display = 'none';
+            button.textContent = 'Read More';
+        }
+    });
+});
