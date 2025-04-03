@@ -5,3 +5,23 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+/* body */
+body {
+    background-color: #f9e0e8; /* Softer pastel pink background */
+    color: #333;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    transition: all 0.3s ease-in-out;
+}
+
+/* header */
+header {
+    background: linear-gradient(135deg, #f9c5d3, #f8bbd0); /* Soft pastel gradient */
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    border-bottom: 4px solid #f4a5b7; /* Soft pink accent */
+}
+
