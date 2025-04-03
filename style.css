@@ -19,9 +19,22 @@ body {
 /* header */
 header {
     background: linear-gradient(135deg, #f9c5d3, #f8bbd0); /* Soft pastel gradient */
-    color: white;
+    color: #1B1212;
     padding: 3rem;
     text-align: center;
     border-bottom: 4px solid #f4a5b7; /* Soft pink accent */
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
 }
 
