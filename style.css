@@ -175,6 +175,7 @@ button:hover {
     margin-top: 2rem;
     transition: background-color 0.3s ease;
 }
+
 #resume a:hover {
     background-color: #f8bbd0; /* Lighter pink on hover */
 }
@@ -191,6 +192,33 @@ button:hover {
  #contact p {
     font-size: 1.2rem;
     color: #666;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    border: 2px solid #f4a5b7;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+    background-color: #333;
+    color: #f9e0e8;
+    border-color: #f8bbd0;
+}
+
+#contact textarea {
+    min-height: 100px;
 }
 
 #contact a {
