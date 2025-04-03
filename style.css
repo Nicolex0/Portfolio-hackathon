@@ -38,3 +38,26 @@ p {
     color: #fff;
 }
 
+/* Navbar */
+nav {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #f4a5b7; /* Soft pink */
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+nav a:hover {
+    color: #f8bbd0; /* Lighter pink hover */
+}
+nav a.active {
+    color: #f4a5b7; /* Active link color */
+    font-weight: bold;
+}
+
