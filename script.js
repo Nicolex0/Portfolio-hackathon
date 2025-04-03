@@ -45,3 +45,17 @@ document.querySelectorAll('.toggle-details').forEach(button => {
         }
     });
 });
+
+// Dark Mode Toggle with Icon
+const toggleIcon = document.getElementById('dark-mode-toggle');
+toggleIcon.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    // Toggle between sun and moon icons based on dark mode state
+    if (document.body.classList.contains('dark-mode')) {
+        toggleIcon.classList.remove('fa-sun');
+        toggleIcon.classList.add('fa-moon');
+    } else {
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+    }
+});
