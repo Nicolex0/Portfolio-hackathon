@@ -102,3 +102,18 @@ h2 {
     color: #333;
 }
 
+/* Button Styling */
+button {
+    padding: 12px 30px;
+    background-color: #f4a5b7; /* Soft pink button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+button:hover {
+    background-color: #f8bbd0; /* Lighter pink on hover */
+}
