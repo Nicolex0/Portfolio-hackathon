@@ -61,3 +61,44 @@ nav a.active {
     font-weight: bold;
 }
 
+/* Section Styling */
+section {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1B1212; /* Soft pink section title */
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.card {
+    background-color: #f9e0e8; /* Softer pastel pink card background */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f4a5b7;
+}
+.card p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
