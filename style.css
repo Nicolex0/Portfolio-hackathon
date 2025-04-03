@@ -239,20 +239,19 @@ body.dark-mode #contact textarea {
 }
 
 /* Soft Skills Section */
-#soft-skills {
-    padding: 4rem 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 #soft-skills ul {
     list-style-type: none;
     padding: 0;
 }
+
 #soft-skills li {
     font-size: 1.2rem;
     color: #333;
     margin: 0.5rem 0;
+}
+
+body.dark-mode #soft-skills li {
+    color: #f9e0e8;
 }
 
 /* Responsive Design */
