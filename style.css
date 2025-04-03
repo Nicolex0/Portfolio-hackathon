@@ -16,6 +16,12 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1B1212;
+    color: #f9e0e8;
+}
+
 /* header */
 header {
     background: linear-gradient(135deg, #f9c5d3, #f8bbd0); /* Soft pastel gradient */
@@ -23,6 +29,11 @@ header {
     padding: 3rem;
     text-align: center;
     border-bottom: 4px solid #f4a5b7; /* Soft pink accent */
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #333, #555);
+    color: #f9e0e8;
 }
 
 h1 {
@@ -46,6 +57,11 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
 }
+
+body.dark-mode nav {
+    background: #222;
+}
+
 nav a {
     margin: 0 20px;
     text-decoration: none;
@@ -70,12 +86,20 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+body.dark-mode section {
+    background-color: #222;
+}
+
 h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #1B1212; /* Soft pink section title */
     text-transform: uppercase;
     font-weight: 700;
+}
+
+body.dark-mode h2 {
+    color: #f9e0e8;
 }
 
 .card {
@@ -85,6 +109,11 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .card {
+    background-color: #333;
+    color: #f9e0e8;
 }
 
 .card:hover {
@@ -102,6 +131,10 @@ h2 {
     color: #333;
 }
 
+body.dark-mode .card p {
+    color: #f9e0e8;
+}
+
 /* Button Styling */
 button {
     padding: 12px 30px;
@@ -116,6 +149,11 @@ button {
 }
 button:hover {
     background-color: #f8bbd0; /* Lighter pink on hover */
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    margin-top: 1.5rem;
 }
 
  /* Resume Download */
@@ -156,6 +194,13 @@ button:hover {
 
 #contact a:hover {
     color: #f8bbd0; /* Lighter pink on hover */
+}
+
+body.dark-mode #contact input,
+body.dark-mode #contact textarea {
+    background-color: #333;
+    color: #f9e0e8;
+    border-color: #f8bbd0;
 }
 
 /* Soft Skills Section */
