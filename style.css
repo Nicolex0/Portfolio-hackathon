@@ -117,3 +117,19 @@ button {
 button:hover {
     background-color: #f8bbd0; /* Lighter pink on hover */
 }
+
+ /* Resume Download */
+ #resume a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #f4a5b7; /* Soft pink button for resume */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+#resume a:hover {
+    background-color: #f8bbd0; /* Lighter pink on hover */
+}
