@@ -9,7 +9,7 @@
 
 /* body */
 body {
-    background-color:linear-gradient(135deg, #f9e0e8 0%, #fce4ec 100%); /* Softer pastel pink background */
+    background: linear-gradient(135deg, #f9e0e8 0%, #fce4ec 100%); /* Fixed gradient syntax */
     color: #2d1b1b;
     text-align: center;
     font-size: 1.1rem;
@@ -29,7 +29,7 @@ body.dark-mode {
 header {
     background: 
         linear-gradient(rgba(249, 197, 211, 0.7), rgba(248, 187, 208, 0.7)),
-        url('https://img.freepik.com/free-vector/hand-drawn-flowers-blackboard-background_23-2148401951.jpg?uid=R194316171&ga=GA1.1.1254891695.1740570168&semt=ais_hybrid&w=740') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
     padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
@@ -41,12 +41,11 @@ header {
     overflow: hidden;
 }
 
-
 /* Dark Mode Adjustments - Keep the same image but change overlay */
 body.dark-mode header {
     background: 
         linear-gradient(rgba(30, 30, 30, 0.7), rgba(18, 18, 18, 0.7)),
-        url('https://img.freepik.com/free-vector/hand-drawn-flowers-blackboard-background_23-2148401951.jpg?uid=R194316171&ga=GA1.1.1254891695.1740570168&semt=ais_hybrid&w=740') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
 }
 
 .business-card {
@@ -208,7 +207,7 @@ body.dark-mode section {
 }
 
 h2 {
-    ffont-size: 2.8rem;
+    font-size: 2.8rem; /* Fixed typo */
     font-weight: 700;
     color: #f4a5b7;
     text-transform: uppercase;
@@ -282,7 +281,7 @@ body.dark-mode .card p {
     color: #f9e0e8;
 }
 
-/* Unified Button Styles - Matching Resume Download */
+/* Unified Button Styles */
 button, 
 .toggle-details, 
 #contact-form button, 
