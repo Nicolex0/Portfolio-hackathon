@@ -11,6 +11,15 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
+// Responsive Design: Show/Hide Details on Mobile
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.more-details').forEach(details => {
+            details.style.display = 'none';
+        });
+    }
+});
+
 // Highlight Active Section
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
@@ -71,3 +80,4 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     alert('Thank you for your message! (This is a demo - no real submission yet)');
     e.target.reset();
 });
+
