@@ -5,41 +5,43 @@ document.querySelectorAll('nav a').forEach(anchor => {
         const sectionId = this.getAttribute('href');
         if (sectionId.startsWith('#')) {
             document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+            // Collapse nav after clicking on mobile
+            if (window.innerWidth <= 768) {
+                document.querySelector('nav').style.height = '50px';
+            }
         } else {
             window.open(sectionId, '_blank');
         }
     });
 });
 
-// Responsive Design: Show/Hide Details on MobileAdd responsive
+// Initialize mobile settings
 window.addEventListener('DOMContentLoaded', () => {
+    // Hide project details on mobile
     if (window.innerWidth <= 768) {
         document.querySelectorAll('.more-details').forEach(details => {
             details.style.display = 'none';
         });
-
-        // Initialize compact navbar on mobile
+        
+        // Set initial navbar state
         const nav = document.querySelector('nav');
-        if (window.scrollY > 100) {
-            nav.style.height = '50px';
-        }
+        nav.style.height = '50px';
+        nav.style.overflow = 'hidden';
     }
 });
 
-// Highlight Active Section
+// Highlight Active Section and Handle Navbar
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
     const nav = document.querySelector('nav');
 
-    // Compact navbar when scrolling
-    if (window.scrollY > 100) {
+    // Compact navbar when scrolling down
+    if (window.scrollY > 100 && window.innerWidth <= 768) {
         nav.style.height = '50px';
-        nav.style.overflow = 'hidden';
-    } else {
-        nav.style.height = 'auto';
     }
 
+    // Active section detection
     let currentSection = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
@@ -70,11 +72,10 @@ document.querySelectorAll('.toggle-details').forEach(button => {
     });
 });
 
-// Dark Mode Toggle with Icon
+// Dark Mode Toggle
 const toggleIcon = document.getElementById('dark-mode-toggle');
 toggleIcon.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    // Toggle between sun and moon icons based on dark mode state
     if (document.body.classList.contains('dark-mode')) {
         toggleIcon.classList.remove('fa-sun');
         toggleIcon.classList.add('fa-moon');
@@ -96,29 +97,37 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.target.reset();
 });
 
-// Touch support for mobile navbar
-let navTapTimer;
-document.querySelector('nav').addEventListener('touchstart', function() {
-    this.style.height = 'auto';
-    clearTimeout(navTapTimer);
+// Mobile Navbar Touch Handling
+let lastTap = 0;
+const nav = document.querySelector('nav');
+
+nav.addEventListener('touchstart', function(e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    if (tapLength < 300 && tapLength > 0) {
+        // Double tap to toggle
+        this.style.height = this.style.height === '50px' ? 'auto' : '50px';
+        e.preventDefault();
+    }
+    lastTap = currentTime;
 });
 
-document.querySelector('nav').addEventListener('touchend', function() {
-    navTapTimer = setTimeout(() => {
-        if (window.scrollY > 100) {
-            this.style.height = '50px';
-        }
-    }, 2000); // Collapse after 2 seconds
+// Auto-collapse when clicking outside
+document.addEventListener('touchstart', function(e) {
+    if (!nav.contains(e.target) && window.scrollY > 100 && window.innerWidth <= 768) {
+        nav.style.height = '50px';
+    }
 });
 
 // Handle window resize
 window.addEventListener('resize', () => {
+    const nav = document.querySelector('nav');
     if (window.innerWidth <= 768) {
-        const nav = document.querySelector('nav');
         if (window.scrollY > 100) {
             nav.style.height = '50px';
         }
     } else {
-        document.querySelector('nav').style.height = 'auto';
+        nav.style.height = 'auto';
     }
 });
