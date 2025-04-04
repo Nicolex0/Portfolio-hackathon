@@ -128,6 +128,38 @@ body.dark-mode .website::after {
         rgba(248, 187, 208, 0.6));
 }
 
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem;
+        min-height: 50vh;
+    }
+    
+    .business-card {
+        padding: 2rem;
+        width: 90%;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header .title {
+        font-size: 1.1rem;
+    }
+    
+    .contact-info {
+        font-size: 0.9rem;
+    }
+    
+    #dark-mode-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
 /* Keep your existing dark mode toggle positioning */
 #dark-mode-toggle {
     position: absolute;
@@ -184,6 +216,19 @@ nav a.active {
     color: #f4a5b7; /* Active link color */
     font-weight: 700;
     border-bottom: 2px solid #f4a5b7;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+    
+    nav a {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+    }
 }
 
 /* Section Styling */
@@ -282,6 +327,29 @@ body.dark-mode .card p {
     color: #f9e0e8;
 }
 
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 1rem;
+        margin: 1.5rem auto;
+        width: 95%;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card p {
+        font-size: 1rem;
+    }
+}
 /* Unified Button Styles - Matching Resume Download */
 button, 
 .toggle-details, 
@@ -302,6 +370,16 @@ button,
     display: inline-block;
     text-decoration: none;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    button, 
+    .toggle-details, 
+    #contact-form button, 
+    #resume a {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
 }
 
 /* Hover State for All Buttons */
@@ -488,6 +566,17 @@ body.dark-mode #contact textarea {
     border-color: #f8bbd0;
 }
 
+@media (max-width: 768px) {
+    #contact form {
+        width: 100%;
+    }
+    
+    #contact input,
+    #contact textarea {
+        width: 100%;
+    }
+}
+
 #contact textarea {
     min-height: 120px;
     resize: vertical;
@@ -522,6 +611,13 @@ body.dark-mode #soft-skills li::before {
     color: #f8bbd0;
 }
 
+@media (max-width: 768px) {
+    #soft-skills li {
+        font-size: 1rem;
+        padding-left: 20px;
+    }
+}
+
 /* Footer */
 footer {
     padding: 2rem;
@@ -534,6 +630,13 @@ footer {
 body.dark-mode footer {
     background: #121212;
     box-shadow: 0 -4px 20px rgba(244, 165, 183, 0.05);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Responsive Design */
@@ -596,4 +699,41 @@ body.dark-mode .card:hover {
 body.dark-mode h2::after,
 body.dark-mode .website::after {
     animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* Card cointainer adjustments t screen sizes */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav a, 
+    button, 
+    .toggle-details, 
+    #contact-form button, 
+    #resume a {
+        min-height: 44px; /* Recommended minimum touch target size */
+        min-width: 44px;
+    }
+    
+    input, textarea {
+        min-height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
 }
