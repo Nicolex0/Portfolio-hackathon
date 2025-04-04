@@ -11,7 +11,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Responsive Design: Show/Hide Details on Mobile
+// Responsive Design: Show/Hide Details on MobileAdd responsive
 window.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth <= 768) {
         document.querySelectorAll('.more-details').forEach(details => {
