@@ -21,42 +21,112 @@ body {
 
 /* Dark Mode */
 body.dark-mode {
-    background: linear-gradient(135deg, #1b1212 0%, #2d1b1b 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
     color: #f9e0e8;
 }
 
 /* header */
 header {
-    background: linear-gradient(135deg, #f9c5d3 0%, #f8bbd0 100%); /* Soft pastel gradient */
+    background: linear-gradient(135deg, #f9c5d3 0%, #f8bbd0 100%);
     padding: 4rem 2rem;
-    border-bottom: 6px solid #f4a5b7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
-body.dark-mode header {
-    background: linear-gradient(135deg, #2d1b1b 0%, #3e2723 100%);
-    border-bottom: 6px solid #f8bbd0;
+.business-card {
+    background-color: white;
+    padding: 3rem 4rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 header h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
     color: #2d1b1b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-transform: none;
+    letter-spacing: normal;
+    text-shadow: none;
 }
 
-body.dark-mode header h1 {
-    color: #f9e0e8;
-}
-
-header p {
+header .title {
     font-size: 1.4rem;
-    font-weight: 300;
-    color: #fff;
-    margin: 0.5rem 0 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: #2d1b1b;
+}
+
+.contact-info {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.website {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.social-handle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .business-card {
+    background-color: #121212;
+    border: 1px solid rgba(244, 165, 183, 0.15);
+    box-shadow: 0 10px 30px rgba(244, 165, 183, 0.08);
+}
+
+body.dark-mode .business-card::before {
+    background: linear-gradient(90deg, 
+        rgba(244, 165, 183, 0.8), 
+        rgba(248, 187, 208, 0.6), 
+        rgba(249, 197, 211, 0.4));
+}
+
+body.dark-mode header h1,
+body.dark-mode header .title,
+body.dark-mode .social-handle {
+    color: #f9e0e8;
+    text-shadow: 0 0 8px rgba(248, 187, 208, 0.3);
+}
+
+body.dark-mode .contact-info {
+    color: #d1c4c9;
+}
+
+body.dark-mode .website {
+    color: #f8bbd0;
+}
+
+body.dark-mode .website::after {
+    background: linear-gradient(90deg, 
+        rgba(244, 165, 183, 0.8), 
+        rgba(248, 187, 208, 0.6));
+}
+
+/* Keep your existing dark mode toggle positioning */
+#dark-mode-toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: #2d1b1b;
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: #f9e0e8;
 }
 
 /* Navbar */
@@ -71,7 +141,17 @@ nav {
 }
 
 body.dark-mode nav {
-    background: rgba(34, 34, 34, 0.95);
+    background: rgba(18, 18, 18, 0.98);
+    box-shadow: 0 4px 20px rgba(244, 165, 183, 0.1);
+}
+
+body.dark-mode nav a {
+    color: #f4a5b7;
+}
+
+body.dark-mode nav a:hover {
+    color: #f8bbd0;
+    text-shadow: 0 0 10px rgba(248, 187, 208, 0.4);
 }
 
 nav a {
@@ -106,7 +186,8 @@ section {
 }
 
 body.dark-mode section {
-    background: rgba(34, 34, 34, 0.9);
+    background: rgba(28, 28, 28, 0.95);
+    box-shadow: 0 6px 25px rgba(244, 165, 183, 0.08);
 }
 
 @keyframes fadeIn {
@@ -136,10 +217,14 @@ h2::after {
 
 body.dark-mode h2 {
     color: #f8bbd0;
+    text-shadow: 0 0 10px rgba(248, 187, 208, 0.3);
 }
 
 body.dark-mode h2::after {
-    background: #f8bbd0;
+    background: linear-gradient(90deg, 
+        rgba(244, 165, 183, 0.8), 
+        rgba(248, 187, 208, 0.6));
+    box-shadow: 0 0 10px rgba(248, 187, 208, 0.3);
 }
 
 /* Card Styling */
@@ -152,13 +237,17 @@ body.dark-mode h2::after {
 }
 
 body.dark-mode .card {
-    background-color: #3e2723;
-    color: #f9e0e8;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 20px rgba(244, 165, 183, 0.05);
 }
 
 .card:hover {
     transform: translateY(-15px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 8px 30px rgba(244, 165, 183, 0.15);
 }
 
 .card h3 {
@@ -181,33 +270,129 @@ body.dark-mode .card p {
     color: #f9e0e8;
 }
 
-/* Button Styling */
-button {
+/* Unified Button Styles - Matching Resume Download */
+button, 
+.toggle-details, 
+#contact-form button, 
+#resume a {
     padding: 12px 35px;
-    background-color: linear-gradient(135deg, #e91e63 0%, #f06292 100%); /* Soft pink button */
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
     color: white;
     border: none;
     border-radius: 25px;
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
-button:hover {
+/* Hover State for All Buttons */
+button:hover, 
+.toggle-details:hover, 
+#contact-form button:hover, 
+#resume a:hover {
     background: linear-gradient(135deg, #d81b60 0%, #ec407a 100%);
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Dark Mode Toggle Icon */
-#dark-mode-toggle {
-    /* Styling for the icon replacing the button */
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
+/* Active/Focus State */
+button:focus, 
+.toggle-details:focus, 
+#contact-form button:focus, 
+#resume a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.4);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode button,
+body.dark-mode .toggle-details,
+body.dark-mode #contact-form button {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode button:hover,
+body.dark-mode .toggle-details:hover,
+body.dark-mode #contact-form button:hover,
+body.dark-mode #resume a:hover {
+    box-shadow: 0 4px 20px rgba(216, 27, 96, 0.3);
+}
+
+/* Specific adjustments for form button */
+#contact-form button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Read More button specific */
+.toggle-details {
     margin-top: 1.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2d1b1b;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f4a5b7;
+    z-index: 100;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Styles for Toggle */
+body.dark-mode #dark-mode-toggle {
+    background: rgba(30, 30, 30, 0.9);
+    color: #f8bbd0;
+    border-color: #f8bbd0;
+    box-shadow: 0 0 15px rgba(248, 187, 208, 0.3);
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: #1e1e1e;
+    color: #f9e0e8;
+    box-shadow: 0 0 20px rgba(248, 187, 208, 0.5);
+}
+
+/* Icon Specific Styling */
+#dark-mode-toggle .fa-sun,
+#dark-mode-toggle .fa-moon {
+    transition: opacity 0.3s ease;
+}
+
+/* Show only the relevant icon */
+body:not(.dark-mode) #dark-mode-toggle .fa-moon,
+body.dark-mode #dark-mode-toggle .fa-sun {
+    opacity: 0;
+    position: absolute;
+}
+
+body:not(.dark-mode) #dark-mode-toggle .fa-sun,
+body.dark-mode #dark-mode-toggle .fa-moon {
+    opacity: 1;
 }
 
 /* Project More Details */
@@ -222,18 +407,21 @@ body.dark-mode .more-details {
     color: #ccc;
 }
 
- /* Resume Download */
- #resume a {
+/* Resume Download */
+#resume a {
     display: inline-block;
     padding: 12px 35px;
-    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%); 
+    background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
     color: white;
     text-decoration: none;
     border-radius: 25px;
     font-size: 1.2rem;
     margin-top: 2rem;
     font-weight: 500;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 #resume a:hover {
@@ -332,8 +520,8 @@ footer {
 }
 
 body.dark-mode footer {
-    background: #2d1b1b;
-    color: #f9e0e8;
+    background: #121212;
+    box-shadow: 0 -4px 20px rgba(244, 165, 183, 0.05);
 }
 
 /* Responsive Design */
@@ -347,4 +535,53 @@ body.dark-mode footer {
     .card-container {
         grid-template-columns: 1fr;
     }
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: #f8bbd0;
+    text-shadow: 0 0 8px rgba(248, 187, 208, 0.4);
+}
+
+/* Add these new styles for luminous effects */
+.business-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(248, 187, 208, 0.1) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode .business-card::after {
+    opacity: 1;
+}
+
+/* Glow effect for interactive elements */
+body.dark-mode button:hover,
+body.dark-mode #resume a:hover,
+body.dark-mode .card:hover {
+    box-shadow: 0 0 15px rgba(248, 187, 208, 0.3);
+}
+
+/* Subtle animation for luminous elements */
+@keyframes gentlePulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+body.dark-mode h2::after,
+body.dark-mode .website::after {
+    animation: gentlePulse 3s ease-in-out infinite;
 }
