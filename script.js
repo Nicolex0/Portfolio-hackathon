@@ -17,6 +17,12 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.more-details').forEach(details => {
             details.style.display = 'none';
         });
+
+        // Initialize compact navbar on mobile
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.height = '50px';
+        }
     }
 });
 
@@ -24,6 +30,15 @@ window.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
+    const nav = document.querySelector('nav');
+
+    // Compact navbar when scrolling
+    if (window.scrollY > 100) {
+        nav.style.height = '50px';
+        nav.style.overflow = 'hidden';
+    } else {
+        nav.style.height = 'auto';
+    }
 
     let currentSection = '';
     sections.forEach(section => {
@@ -81,3 +96,29 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.target.reset();
 });
 
+// Touch support for mobile navbar
+let navTapTimer;
+document.querySelector('nav').addEventListener('touchstart', function() {
+    this.style.height = 'auto';
+    clearTimeout(navTapTimer);
+});
+
+document.querySelector('nav').addEventListener('touchend', function() {
+    navTapTimer = setTimeout(() => {
+        if (window.scrollY > 100) {
+            this.style.height = '50px';
+        }
+    }, 2000); // Collapse after 2 seconds
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.height = '50px';
+        }
+    } else {
+        document.querySelector('nav').style.height = 'auto';
+    }
+});

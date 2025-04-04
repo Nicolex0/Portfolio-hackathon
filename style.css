@@ -219,17 +219,45 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
+/* Mobile-friendly version */
+@media (max-width: 768px) {
     nav {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 0;
+        height: 50px;
+        overflow-y: auto; /* Allow scrolling */
+    }
+    
+    nav:hover {
+        height: auto;
     }
     
     nav a {
-        margin: 0.5rem 0;
-        padding: 0.5rem;
+        padding: 0.8rem 1rem;
     }
 }
+
+/* Active section indicator */
+nav a.active {
+    position: relative;
+    border-bottom: none;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #f4a5b7;
+    border-radius: 50%;
+}
+
+body.dark-mode nav a.active::after {
+    background: #f8bbd0;
+    box-shadow: 0 0 8px rgba(248, 187, 208, 0.6);
+}
+
 
 /* Section Styling */
 section {
